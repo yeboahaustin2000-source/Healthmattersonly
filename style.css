@@ -1,0 +1,57 @@
+body{
+font-family: Arial, sans-serif;
+margin:0;
+background:#eef3f8;
+}
+
+header{
+background:#0a3d62;
+color:white;
+text-align:center;
+padding:25px;
+}
+
+nav a{
+color:white;
+margin:10px;
+text-decoration:none;
+font-weight:bold;
+}
+
+nav a:hover{
+color:#ffd32a;
+}
+
+.hero{
+text-align:center;
+padding:60px 20px;
+background:white;
+}
+
+.features{
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+padding:40px;
+}
+
+.card{
+background:white;
+width:280px;
+margin:15px;
+padding:25px;
+border-radius:12px;
+box-shadow:0 5px 15px rgba(0,0,0,0.1);
+transition:0.3s;
+}
+
+.card:hover{
+transform:translateY(-5px);
+}
+
+footer{
+background:#0a3d62;
+color:white;
+text-align:center;
+padding:20px;
+}
