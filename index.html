@@ -1,57 +1,8 @@
-<!DOCTYPE html>
-<html>
-<head>
-<title>Health Matters</title>
-<link rel="stylesheet" href="style.css">
-</head>
-
-<body>
-
 <nav>
 <h1>Health Matters</h1>
-<ul>
-<li><a href="index.html">Home</a></li>
-<li><a href="articles.html">Articles</a></li>
-<li><a href="projects.html">Projects</a></li>
-<li><a href="quiz.html">Quiz</a></li>
-</ul>
-</nav>
 
-<div class="hero">
-<h2>Empowering Health Through Knowledge</h2>
-<p>Educating individuals and communities about preventive care, disease management and healthy living.</p>
-<button onclick="location.href='articles.html'">Explore Articles</button>
-</div>
+<button id="darkToggle">🌙</button>
 
-<section>
-<h2 class="section-title">What We Offer</h2>
-
-<div class="card-container">
-
-<div class="card">
-<h3>Health Education</h3>
-<p>Evidence-based articles designed to improve understanding of medical conditions and preventive care.</p>
-</div>
-
-<div class="card">
-<h3>Clinical Projects</h3>
-<p>Research-based healthcare initiatives addressing youth unemployment and public health awareness.</p>
-</div>
-
-<div class="card">
-<h3>Interactive Quizzes</h3>
-<p>Test your understanding with short educational quizzes after every topic.</p>
-</div>
-
-</div>
-</section>
-
-<footer>
-© 2026 Health Matters | Designed by Yeboah Austin
-</footer>
-
-</body>
-</html>
 <div class="hero fade-in">
 
 <h2>Compassionate Care. Trusted Knowledge.</h2>
@@ -72,3 +23,68 @@ d="M0,224L80,224C160,224,320,224,480,202.7C640,181,800,139,960,138.7C1120,139,12
 </path>
 </svg>
 </div>
+<section class="stats-section fade-in">
+<h2 class="section-title">Our Impact</h2>
+
+<div class="stats-container">
+
+<div class="stat">
+<h3 class="counter" data-target="1500">0</h3>
+<p>Patients Educated</p>
+</div>
+
+<div class="stat">
+<h3 class="counter" data-target="25">0</h3>
+<p>Articles Published</p>
+</div>
+
+<div class="stat">
+<h3 class="counter" data-target="10">0</h3>
+<p>Health Projects</p>
+</div>
+<section class="testimonials">
+<h2 class="section-title">What Visitors Say</h2>
+
+<div class="testimonial-container">
+
+<div class="testimonial-card">
+<p>"This platform helped me understand kidney disease better than my textbook."</p>
+<h4>— Nursing Student</h4>
+</div>
+
+<div class="testimonial-card">
+<p>"Clear explanations and practical examples. Very useful for exam preparation."</p>
+<h4>— Health Trainee</h4>
+</div>
+
+</div>
+</section>
+
+</div>
+<section class="contact-section">
+...
+</section>
+<script>
+const counters = document.querySelectorAll('.counter');
+counters.forEach(counter => {
+counter.innerText = '0';
+const updateCounter = () => {
+const target = +counter.getAttribute('data-target');
+const c = +counter.innerText;
+const increment = target / 200;
+if(c < target){
+counter.innerText = `${Math.ceil(c + increment)}`;
+setTimeout(updateCounter, 10);
+} else {
+counter.innerText = target;
+}
+};
+updateCounter();
+});
+</script>
+<script>
+const toggle = document.getElementById("darkToggle");
+toggle.addEventListener("click", ()=>{
+document.body.classList.toggle("dark-mode");
+});
+</script>
